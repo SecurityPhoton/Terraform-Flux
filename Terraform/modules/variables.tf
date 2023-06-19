@@ -12,7 +12,7 @@ variable "ecdsa_curve" {
 
 variable "GITHUB_OWNER" {
   type = string
-  default = ""
+  default = "pontarr"
   description = "Github username"
 }
 
