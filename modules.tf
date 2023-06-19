@@ -7,7 +7,6 @@ module "gke_cluster" {
 
 module "tls_private_key" {
   source = "github.com/den-vasyliev/tf-hashicorp-tls-keys"
-
   algorithm   = var.algorithm
   ecdsa_curve = var.ecdsa_curve
 }
@@ -28,3 +27,4 @@ module "flux_bootstrap" {
   config_path       = module.gke_cluster.kubeconfig
   github_token      = var.GITHUB_TOKEN
 }
+
