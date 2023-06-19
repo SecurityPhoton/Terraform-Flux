@@ -11,3 +11,28 @@ terraform {
     prefix = "terraform/state"
   }
 }
+
+module "tls_private_key" {
+  source = "github.com/den-vasyliev/tf-hashicorp-tls-keys"
+
+  algorithm   = var.algorithm
+  ecdsa_curve = var.ecdsa_curve
+}
+
+
+module "flux_bootstrap" {
+  source            = "github.com/den-vasyliev/tf-fluxcd-flux-bootstrap"
+  github_repository = "${var.GITHUB_OWNER}/${var.FLUX_GITHUB_REPO}"
+  private_key       = module.tls_private_key.private_key_pem
+  config_path       = module.gke_cluster.kubeconfig
+  github_token      = var.GITHUB_TOKEN
+}
+
+
+output "private_key_pem" {
+  value = module.tls_private_key.private_key_pem
+}
+
+output "public_key_openssh" {
+  value = module.tls_private_key.public_key_openssh
+}
