@@ -5,7 +5,7 @@ variable "GOOGLE_PROJECT" {
            
 variable "GOOGLE_REGION" {
   type        = string
-  default     = "europe-north1"
+  default     = "us-central1-c"
   description = "GCP region to use"
 }
 
@@ -17,7 +17,7 @@ variable "GKE_NUM_NODES" {
 
 variable "GKE_MACHINE_TYPE" {
   type        = string
-  default     = "e2-small"
+  default     = "g1-small"
   description = "Machine type"
 }
 
@@ -41,7 +41,7 @@ variable "GITHUB_OWNER" {
 
 variable "FLUX_GITHUB_REPO" {
   type = string
-  default = "flux-gitops-repo"
+  default = "flux-gitops"
   description = "GitHub repository to store Flux manifests"
 }
 
