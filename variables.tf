@@ -47,7 +47,6 @@ variable "FLUX_GITHUB_REPO" {
 
 variable "GITHUB_TOKEN" {
   type = string
-  default = ""
   description = "The token used to authenticate with the Git repository"
 }
 
