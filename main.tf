@@ -5,6 +5,4 @@ terraform {
   }
 }
 
-output "kubeconfig_file" {
-      value = "${path.cwd}/kubeconfig"
-    }
+

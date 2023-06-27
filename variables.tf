@@ -50,8 +50,4 @@ variable "GITHUB_TOKEN" {
   description = "The token used to authenticate with the Git repository"
 }
 
-variable "config_path" {
-  type        = string
-  default     = "~/.kube/config"
-  description = "The path to the kubeconfig file"
-}
+
